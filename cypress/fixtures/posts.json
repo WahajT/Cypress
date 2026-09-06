@@ -1,0 +1,12 @@
+{
+  "newPost": {
+    "title": "Cypress framework smoke post",
+    "body": "Created by the API example spec.",
+    "userId": 1
+  },
+  "updatedPost": {
+    "title": "Cypress framework updated post",
+    "body": "Updated by the API example spec.",
+    "userId": 1
+  }
+}

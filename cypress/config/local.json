@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "expose": {
+    "apiUrl": "https://jsonplaceholder.typicode.com",
+    "environmentName": "local"
+  },
+  "env": {}
+}

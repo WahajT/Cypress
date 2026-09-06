@@ -1,15 +1,59 @@
 {
-  "name": "cypress",
+  "name": "cypress-framework",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "open":"npx cypress open"
+  "description": "A ready-to-use, scalable Cypress end-to-end and API testing framework. Clone it and start writing tests.",
+  "keywords": [
+    "cypress",
+    "testing",
+    "e2e",
+    "end-to-end",
+    "api-testing",
+    "test-automation",
+    "page-object-model",
+    "qa",
+    "boilerplate",
+    "framework"
+  ],
+  "license": "MIT",
+  "author": "Wahaj Tahir",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WahajT/cypress-framework.git"
   },
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0 || >=26.0.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open --e2e",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:headed": "cypress run --headed",
+    "test": "cypress run",
+    "test:ui": "cypress run --spec \"cypress/e2e/ui/**/*.cy.js\"",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**/*.cy.js\"",
+    "test:smoke": "cypress run --expose grepTags=@smoke",
+    "test:local": "cypress run --env configFile=local",
+    "test:staging": "cypress run --env configFile=staging",
+    "test:production": "cypress run --env configFile=production",
+    "clean": "rimraf cypress/reports cypress/screenshots cypress/videos",
+    "pretest": "npm run clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "devDependencies": {
-    "cypress": "^13.13.3"
+    "@cypress/grep": "^7.0.0",
+    "@eslint/js": "^10.0.1",
+    "cypress": "^16.0.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^7.0.1",
+    "eslint-plugin-mocha": "^12.0.2",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.6",
+    "rimraf": "^6.1.3"
   }
 }

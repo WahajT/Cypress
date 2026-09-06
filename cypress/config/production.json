@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "video": true,
+  "retries": { "runMode": 3, "openMode": 0 },
+  "expose": {
+    "apiUrl": "https://jsonplaceholder.typicode.com",
+    "environmentName": "production"
+  },
+  "env": {}
+}

@@ -1,0 +1,9 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "retries": { "runMode": 2, "openMode": 0 },
+  "expose": {
+    "apiUrl": "https://jsonplaceholder.typicode.com",
+    "environmentName": "staging"
+  },
+  "env": {}
+}
