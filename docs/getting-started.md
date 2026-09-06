@@ -66,5 +66,8 @@ for the details.
 - [Writing tests](writing-tests.md)
 - [Page objects](page-objects.md)
 - [Custom commands](custom-commands.md)
+- [Configuration](configuration.md)
+- [Environments](environments.md)
 - [Reporting](reporting.md)
 - [CI](ci.md)
+- [FAQ / troubleshooting](faq.md)

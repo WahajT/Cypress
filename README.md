@@ -36,19 +36,28 @@ npm test             # headless, all specs → report at cypress/reports/index.h
 Requires **Node 22+** (`nvm use`). The HTML report is generated automatically at
 the end of every `npm test` run — no extra step.
 
-## Common commands
+## Every npm script
 
-| Command                                   | What it does                                   |
-| ----------------------------------------- | ---------------------------------------------- |
-| `npm run cy:open`                         | Open the interactive Cypress runner            |
-| `npm test`                                | Run every spec headless (cleans reports first) |
-| `npm run test:ui`                         | Run only `cypress/e2e/ui/**`                   |
-| `npm run test:api`                        | Run only `cypress/e2e/api/**`                  |
-| `npm run test:smoke`                      | Run only tests tagged `@smoke`                 |
-| `npm run test:staging`                    | Run against the `staging` environment config   |
-| `npm run clean`                           | Delete `cypress/reports`, screenshots, videos  |
-| `npm run lint` / `npm run lint:fix`       | ESLint                                         |
-| `npm run format` / `npm run format:check` | Prettier                                       |
+| Command                                   | What it does                                                      |
+| ----------------------------------------- | ----------------------------------------------------------------- |
+| `npm run cy:open`                         | Open the interactive Cypress runner                               |
+| `npm run cy:run`                          | Headless run, default browser (Electron)                          |
+| `npm run cy:run:chrome`                   | Headless run in Chrome                                            |
+| `npm run cy:run:firefox`                  | Headless run in Firefox                                           |
+| `npm run cy:run:headed`                   | Headless-mode run with the browser window visible                 |
+| `npm test`                                | `clean` + run every spec headless → `cypress/reports/index.html`  |
+| `npm run test:ui`                         | Run only `cypress/e2e/ui/**`                                      |
+| `npm run test:api`                        | Run only `cypress/e2e/api/**`                                     |
+| `npm run test:smoke`                      | Run only tests tagged `@smoke` (`--expose grepTags=@smoke`)       |
+| `npm run test:local`                      | Run against `cypress/config/local.json` (the default)             |
+| `npm run test:staging`                    | Run against `cypress/config/staging.json`                         |
+| `npm run test:production`                 | Run against `cypress/config/production.json`                      |
+| `npm run clean`                           | Delete `cypress/reports`, `cypress/screenshots`, `cypress/videos` |
+| `npm run lint` / `npm run lint:fix`       | ESLint (flat config)                                              |
+| `npm run format` / `npm run format:check` | Prettier — write / verify                                         |
+
+`pretest` runs `clean` automatically before `npm test`. The `cy:run*` scripts do
+**not** clean first, so the report accumulates until you run `npm run clean`.
 
 ## Project structure
 
